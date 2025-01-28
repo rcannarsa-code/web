@@ -1,0 +1,301 @@
+<!--
+1. HTML: HyperText Markup Language 
+It is the foundation for a website
+
+CSS: Cascating Style Sheets
+Style color and change the apperance of the website
+
+JavaScript
+Adds functionality to a web page
+-->
+
+
+<!--
+The index is the home to a web page (landing page)
+-->
+
+<!DOCTYPE html>
+
+<!-- <html> element represents the root of an HTML document -->
+<html>
+
+<!-- information about the web page -->
+<head>
+
+    <!-- what is displaied on the tab -->
+    <title>My first website</title>
+
+    <!-- meta represents various kind of data (data about data) -->
+    <meta charset="UTF-8">
+    <meta name="description" content=" HTML tutorial for beginners">
+    <meta name="keywords" content="HTML, tutorial, beginners">
+    <meta name="author" content="Raffaele">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="900">
+
+</head>
+
+<!-- what we display to a user -->
+<body>
+
+<!-- headers go from 1 to 6 -->
+    <h1>This is a header</h1>
+
+<!-- br creates a line break and it doesn't need a closing tag -->
+    <br>
+
+<!-- hr (horizontal rule) divides in section the page -->
+    <hr>
+
+<!-- p, is for creating paragraph -->
+    <!-- browsers automatically adds a blank line before and after -->
+    <p>This is a paragraph</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus necessitatibus incidunt voluptas doloremque illum quaerat enim, neque debitis sequi, saepe asperiores obcaecati maxime amet consequuntur minus eligendi fugit omnis quod.</p>
+
+<!-- a generates an hyperlinks that can be applied to text, buttons, images and elements of that nature -->
+<!-- href is where the link is stored -->
+<!-- target decides in which tab the page opens (blank/self) -->
+<!-- title popup box that appears when you move the cursor on the link -->
+    <a href="https://www.google.com" target="_blank" title="Shortcut for Google">
+        Google
+    </a>
+    <br>
+    <a href="page2.html">
+        Go to page 2
+    </a>
+    <br>
+    <a href="mailto:raff1234@gmail.com">
+        email me
+    </a>
+    <br>
+
+<!-- img adding a picture to the we page -->
+<!-- src gets the path of the photo -->
+<!-- height and width attributes are in pixels -->
+<!-- alt is used for empaired readers -->
+<!-- images can become hyperlinks -->
+    <a href="https://en.wikipedia.org/wiki/BoyWithUke" target="_blank">
+        <img src="/images/photo_website.jpg" title="BoyWithUke" height="200" width="300" alt="BoyWithUke style image">
+    </a>
+    <br>
+
+<!-- audio adds an mp3 file to the website -->
+<!-- controls is a boolean that adds play/pause minutes and volume controls -->
+<!-- autoplay is a boolean to make the mp3 start instantly -->
+<!-- muted is a boolen -->
+<!-- loop is a boolen -->
+<!-- sorce element to have some backup files for the music no src in the audio element -->
+    <audio controls loop autoplay muted>
+        <source src ="mp3s/Keys To Unravel - The Soundlings.mp3">
+        <source src ="mp3s/Keys To Unravel - The Soundlings.wav">
+    The browser doesn't support HTML5 audio
+    </audio>
+    <br>
+
+<!-- video adds MP4, WebM and Ogg -->
+    <video controls autoplay muted loop width="500">
+        <source src=".mp4">
+        <source src=".WebM">
+        The browser doesn't support HTML5 video
+    </video>
+    <br>
+
+<!-- HTML text formatting tags -->
+    <p>This is normal text</p>
+    <p>This is <b>bold</b> text</p>
+    <p>This is <i>italic</i> text</p>
+    <p>This is <big>big</big> text</p>
+    <p>This is <small>small</small> text</p>
+    <p>This is <sub>subscript</sub> text</p>
+    <p>This is <sup>superscript</sup> text</p>
+    <p>This is <ins>underlined</ins> text</p>
+    <p>This is <del>deleted</del> text</p>
+    <p>This is <mark>marked</mark> text</p>
+    <br>
+
+<!-- unordered lists int HTML -->
+    <ul>
+        <li>this is an item</li>
+        <ul>
+            <li>this is a subitem</li>
+        </ul>
+        <li>this is an item</li>
+    </ul>
+<!-- ordered lists int HTML -->
+    <ol type="I">
+        <li>this is an item</li>
+        <li>this is an item</li>
+    </ol>
+<!-- description lists int HTML -->
+    <dl>
+        <dt>term</dt>
+        <dd>definition</dd>
+        <dt>HTML</dt>
+        <dd>This adds structure to a webpage</dd>
+        <dt>CSS</dt>
+        <dd>This adds style to a webpage</dd>
+        <dt>JavaScript</dt>
+        <dd>This adds functionality to a webpage</dd>
+    </dl>
+    <br>
+
+<!-- table adds a table to the webpage -->
+<!-- tr (table row) // th (table header) // td (table data)-->
+<!-- bgcolor (background color) -->
+<!-- align decides the alignment of the content -->
+    <h4>Table</h4>
+    <table bgcolor="black" width="700">
+        <tr bgcolor="grey" align="center">
+            <th width="100">Prima</th>
+            <th width="100">Seconda</th>
+            <th width="100">Terza</th>
+            <th width="100">Quarta</th>
+            <th width="100">Quinta</th>
+            <th width="100">Sesta</th>
+            <th width="100">Settima</th>
+        </tr>
+        <tr bgcolor="lightgrey" align="center">
+            <td>(1:1)</td>
+            <td>(1:2)</td>
+            <td>(1:3)</td>
+            <td>(1:4)</td>
+            <td>(1:5)</td>
+            <td>(1:6)</td>
+            <td>(1:7)</td>
+        </tr>
+    </table>
+    <br>
+
+</body>
+
+<!-- style add colo to a webpage -->
+<body style="background-color: wheat;">
+    <h1 style="color: rgb(5, 240, 232);"> This is the rgb color for (5, 240, 232)</h1>
+    <h1 style="color: #28f005;">This is the hex color for #28f005</h1>
+
+    <p style="background-color: #222222; color: #28f005;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        A, iusto odit. Laudantium aspernatur odio accusantium.
+        Molestias, quibusdam error. Doloremque voluptatum porro temporibus 
+        accusamus amet cum accusantium neque quaerat quasi voluptate.
+    </p>
+
+<!-- span adds markup to text or portion of a document -->
+<!-- div defines a division of a document -->
+    <h1>Text</h1>
+    <div style="background-color: whitesmoke;">
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde suscipit assumenda iste nihil eaque a cum repellat temporibus similique, laboriosam soluta nulla fugiat officiis nam quibusdam excepturi esse aliquid doloremque.
+    </p>
+    <p>
+        <span style="color: red;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span> Unde suscipit assumenda iste nihil eaque a cum repellat temporibus similique, laboriosam soluta nulla fugiat officiis nam quibusdam excepturi esse aliquid doloremque.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde suscipit assumenda iste nihil eaque a cum repellat temporibus similique, laboriosam soluta nulla fugiat officiis nam quibusdam excepturi esse aliquid doloremque.
+    </p>
+    </div>
+    <br>
+
+<!-- iframe embeds content from another source into an HTML document ex. ads // hacking -->
+    <!--<iframe src="https://www.wikipedia.com" width="900" height="500">-->
+    <!--<iframe style="border:0" src="ad.html" width="650" height="100">-->
+    <br>
+
+<!-- button element -->
+<!-- disabled boolean for locking a button-->
+    <!-- <a href="https://www.google.com">
+    <button disabled>click me</button>
+        <button style="background-color: lightcyan;color: gray;border-radius: 5px;">click me</button>
+    </a> -->
+    <button onclick="doSomething()">click</button>
+    <p id="test">
+        This is a test paragraph
+    </p>
+<!-- this is a small JS program that sets the paragraph passed to something -->
+    <script>
+        function doSomething(){
+            document.getElementById("test").innerHTML = "Goodbye";
+        }
+    </script>
+    <br>
+
+<!-- form elements -->
+<!-- method="get" is not secure it appends the content the user submits to the url NOT FOR PW -->
+<!-- method="post" is more secure but it needs a server to function -->
+    <form action="action_page.php" method="get">
+        <div>
+            <label for="fname">first name:</label>
+            <input type="text" id="fname" name="fname" placeholder="ex. Marco" required>
+        </div>
+        <br>
+        <div> 
+            <label for="lname">last name:</label>
+            <input type="text" id="lname" name="lname" placeholder="ex. Rossi" required>
+        </div>
+        <br>
+        <div>
+            <label for="pass">password:</label>
+            <input type="password" id="pass" name="pass" required maxlength="20">
+        </div>
+        <br>
+        <div>
+            <label for="email">email:</label>
+            <input type="email" id="email" name="email" required placeholder="ex. mrossi@gmail.com">
+        </div>
+        <br>
+        <div>
+            <label for="phone">telephone #</label>
+            <input type="tel" id="phone" name="phone" required placeholder="ex. (123)-456-789">
+        </div>
+        <br>
+        <div>
+            <label for="bdate">date of birth:</label>
+            <input type="date" id="bdate" name="bdate" required placeholder="ex. dd/mm/yy">
+        </div>
+        <br>
+        <div>
+            <label for="quantity">quantity:</label>
+            <input type="number" id="quantity" name="quantity" required min="0" max="99" value="1">
+        </div>        
+        <br>
+        <!-- use the same name for exclusive choice -->
+        <div>
+            <label for="title">title:</label>
+            
+            <label for="Mr.">Mr.</label>
+            <input type="radio" id="Mr." name="title" value="Mr.">
+            
+            <label for="Ms.">Ms.</label>
+            <input type="radio" id="Ms." name="title" value="Ms.">
+            
+            <label for="Doc">Doc.</label>
+            <input type="radio" id="Doc" name="title" value="Doc">
+        </div>
+        <br>
+        <div>
+            <label for="payment">payment method:</label>
+            <select id="payment" name="payment">
+                <option value="visa">visa</option>
+                <option value="mastercard">mastercard</option>
+                <option value="giftcard">giftcard</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label for="subscribe">subscribe:</label>
+            <input type="checkbox" id="subscribe" name="subscribe">
+        </div>
+        <br>
+        <div>
+            <input type="reset">
+        </div>
+        <br>
+        <div>
+            <input type="submit">
+        </div>
+
+    </form>
+
+</body>
+
+</html>
