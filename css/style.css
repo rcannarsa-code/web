@@ -1,0 +1,23 @@
+body
+{
+    background-color: lightgray;
+}
+h1
+{
+    color: brown;
+}
+p
+{
+    background-color: antiquewhite;
+    color: grey;
+}
+/* #id is used to target a specific element */
+#p1
+{
+    color: tomato;
+}
+/* .class is used to target a specific class */
+.even
+{
+    color: darkkhaki;
+}
