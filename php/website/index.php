@@ -113,7 +113,25 @@
     </form>
     -->
 
+    <!-- eigtheenth lesson
+    <form action="index.php" method="post">
+        username: <br>
+        <input type="text" name="username"><br>
+        age: <br>
+        <input type="text" name="age"><br>
+        email: <br>
+        <input type="text" name="email"><br>
+        <input type="submit" name="login" value="login">
+    </form>
+    -->
 
+    <!-- 22nd lesson
+    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
+        username: <br>
+        <input type="text" name="username">
+        <input type="submit">
+    </form>
+    -->
 
 
 </body>
@@ -580,11 +598,297 @@
 
 
     /* sixteenth lesson
-    */
-    function happy_bday()
+    function happy_bday(string $name, int $age)
     {
-        
+        echo "Happy Birthday dear {$name}<br>";
+        echo "Happy Birthday to you<br>";
+        echo "Happy Birthday dear {$name}<br>";
+        echo "You are {$age} years old! <br>";
     }
+    happy_bday("Raffaele", 23);
+    
+    function is_even(int $number)
+    {
+        return $number % 2;
+    }
+    echo is_even(11);
+    
+    function hypotenuse(int $a, int $b)
+    {
+        $c = sqrt($a ** 2 + $b ** 2);
+        return $c;
+    }
+    echo hypotenuse(3, 4);
+    */
+
+
+
+    /* seventeenth lesson (string functions)
+    $username = "Raffaele Cannarsa";
+    $phone = "123-456-7890";
+
+    $username = strtolower($username);
+    $username = strtoupper($username);
+    $username = trim($username);
+    $username = str_pad($username, 20, "-");
+    $phone = str_replace("-", " ", $phone);
+    $username = strrev($username);
+    $username = str_shuffle($username);
+    $equals = strcmp($username, "Raffo");
+    $count = strlen($username);
+    $index = strpos($username, " ");
+    $first_name = substr($username, 0, 3);
+    $last_name = substr($username, 5);
+    $full_name = explode(" ", $username);
+    $name = implode(" ", $full_name);
+    echo "{$username} <br>";
+    */
+
+    
+
+    /* eigtheenth lesson (sanitize/validate input)
+    if(isset($_POST["login"]))
+    {
+        $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
+        $age = filter_input(INPUT_POST, "age", FILTER_SANITIZE_NUMBER_INT);
+        $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
+        $age = filter_input(INPUT_POST, "age", FILTER_VALIDATE_INT);
+        $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+        if (empty($age) || empty($email))
+        echo "invalid input<br>";
+        else
+        echo "Hi {$username}, you are {$age} years old, your email is {$email}<br>";
+    }
+    */
+
+
+
+    /* nineteenth lesson (include, created header, footer, about and locations)
+    include("header.html");
+    */
+
+
+
+    /* twentieth lesson (cookies: information about a user stored in the user's web-browser)
+    setcookie("fav_food", "pizza", time() - 0, "/");
+    setcookie("fav_drink", "soda", time() + 86400 * 3, "/");
+    setcookie("fav_dessert", "tiramisu", time() + 86400 * 4, "/");
+    
+    foreach($_COOKIE as $key => $value)
+    {
+        echo "{$key} = {$value}<br>";
+    }
+    if(isset($_COOKIE["fav_drink"]))
+        echo "buy some {$_COOKIE["fav_drink"]}";
+        else
+        echo "no favourite drink found";
+    */
+
+
+
+    /* 21st lesson (session: Super Global Variable used to store information on a user to be used across multiple pages)
+                    created home.php
+    session_start();
+    */
+
+
+
+    /* 22nd lesson (server: SGB that contains headers, paths and script locations)
+    foreach($_SERVER as $key => $value)
+    {
+        echo "{$key} = {$value}<br>";
+    }
+    if ($_SERVER["REQUEST_METHOD"] == "POST")
+    {
+        echo "Hi<br>";
+    }
+    */
+
+
+
+    /* 23rd lesson (hashing)
+    $password = "raffi123";
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+    
+    if (password_verify("partal123", $hash))
+    {
+        echo "Logging in<br>";
+    }
+    else
+    {
+        echo "Incorrect password<br>";
+    }
+    echo $hash;
+    */
+
+
+
+    /* 24th lesson (MySQL created database.php, created database with myadmin)
+    include("database.php");
+    */
+
+
+
+    /* 25th lesson (inserting data into a MySQL table with php)
+    include("database.php");
+    
+    $username = "utente3";
+    $password = "password3";
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+    
+    //$sql = "INSERT INTO users (user, password) VALUES ('user1', 'password1')";
+    $sql = "INSERT INTO users (user, password) VALUES ('$username', '$hash')";
+    
+    try{
+        mysqli_query($conn, $sql);
+        echo "created user";
+    }
+    catch(mysqli_sql_exception)
+    {
+        echo "Could not create user";
+    }
+    mysqli_close($conn);
+    */
+
+
+
+    /* 26th lesson (retrieve data from a MySQL database using php)
+    include("database.php");
+    $sql = "SELECT * FROM users";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0)
+    {
+        while ($row = mysqli_fetch_assoc($result))
+        {
+            echo $row["id"] . "<br>";
+            echo $row["user"] . "<br>";
+            echo $row["reg_date"] . "<br>";
+        };
+    }
+    else
+    {
+        echo "user not found";
+    }
+    mysqli_close($conn);
+    */
+
+    /* 28th lesson (registration form using php)
+    include("database.php");
+    */
+
+
+
+
+    
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- nineteenth lesson
+    
+    This is the Home page <br>
+    Here are all the general informations <br>
+    -->
+
+
+
+    <!-- 21st lesson
+    This is the login page <br>
+    <a href="home.php">Home Page</a> <br>
+    <form action="index.php" method="post">
+        username: <br>
+        <input type="text" name="username"><br>
+        password: <br>
+        <input type="password" name="password"><br>
+        <input type="submit" name="login" value="login"><br>
+    </form>
+    -->
+
+
+
+    <!-- 24th lesson
+    Hi <br>
+    -->
+
+
+
+    <!-- 27th lesson
+    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
+        <h2>Welcome to the Webpage</h2>
+        username: <br>
+        <input type="text" name="username"><br>
+        password: <br>
+        <input type="password" name="password"><br>
+        <input type="submit" name="submit" value="register"><br>
+    </form>
+    -->
+    
+</body>
+</html> 
+
+<?php
+
+    /* nineteenth lesson
+    
+    include("footer.html");
+    */
+
+
+
+    /* 21st lesson 
+    $_SESSION["username"] = "RaffiC";
+    $_SESSION["password"] = "R12345";
+    if (isset($_POST["login"]))
+    {
+        if (!empty($_POST["username"]) && !empty($_POST["password"]))
+        {
+            $_SESSION["username"] = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
+            $_SESSION["password"] = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
+            $_SESSION["username"] = $_POST["username"];
+            $_SESSION["password"] = $_POST["password"];
+        
+            header("Location: home.php");
+        }
+        else
+        echo "Please insert the required data<br>";
+    }
+    */
+
+
+
+    /* 28th lesson
+    if ($_SERVER["REQUEST_METHOD"] == "POST")
+    {
+        $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
+        $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
+        
+        if (empty($username))
+            echo "Please enter a username";
+            elseif(empty($password))
+            echo "Please enter a password";
+            else
+            {
+                $hash = password_hash($password, PASSWORD_DEFAULT);
+                $sql = "INSERT INTO users (user, password) VALUES ('$username', '$hash')";
+                try
+                {
+                    mysqli_query($conn, $sql);
+                    echo "You are now registered";
+                }
+                catch(mysqli_sql_exception)
+                {
+                    echo "username already taken";
+                }
+            }
+        }
+        mysqli_close($conn);
+    */
 
 ?>
 
